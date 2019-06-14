@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+        <head>
+
+                <!-- <button height="100" width="100" onclick="fnButton()">Click to begin the Game</button> -->
+
+
+
+
+            <script type="text/javascript">
+
+                // <p id="game"></p>
+                //         function fnButton(){
+                //             document.getElementById("game").innerHTML="game begins";
+                //         }
+
+                var face1,
+                face2; 
+
+                enter=window.prompt("Player 1\nPress Enter throw the die");
+
+                face1=Math.floor(1 + Math.random() * 6);
+                face2=Math.floor(1 + Math.random() * 6);
+                
+                var flag1=1,flag2=1;
+
+                var point1=face1+face2;
+                document.writeln("<p>Player1</p>");
+                document.writeln("<p>Point is "+point1+"</p>");
+
+                if(point1==7||point1==11)
+                {
+                    window.alert("Player 1 WINS in first attempt!!!");
+                    flag1=0;
+                }
+
+                else if(point1==2||point1==3||point1==12)
+                {
+                    window.alert("Player 1 LOSES  in first attempt!!!");
+                    flag1=0;
+                }
+
+
+                enter=window.prompt("Player 2\nPress Enter throw the die","\n");
+                
+                face1=Math.floor(1 + Math.random() * 6);
+                face2=Math.floor(1 + Math.random() * 6);
+                
+                var point2=face1+face2;
+                document.writeln("<p>Player2</p>");
+                document.writeln("<p>Point is "+point2+"</p>");
+
+
+                if(point2==7||point2==11)
+                {
+                    window.alert("Player 2 WINS  in first attempt!!!");
+                    flag2=0;
+                }
+
+                else if(point2==2||point2==3||point2==12)
+                {
+                    window.alert("Player 2 LOSES in first attempt!!!");
+                    flag2=0;
+                }
+                
+
+                else if(flag1==1 && flag2==1)
+                {
+                    for(;;)
+                    {
+                        enter=window.prompt("Player 1\nPress Enter throw the die","\n");
+
+                        face1=Math.floor(1 + Math.random() * 6);
+                        face2=Math.floor(1 + Math.random() * 6);
+                    
+                        var value1=face1+face2;
+                        document.writeln("<p>Player1</p>");
+                        document.writeln("<p>Throw value is "+value1+"</p>");
+
+
+
+                        if(value1==point1)
+                        {
+                            window.alert("Player 1 WINS!!!");
+                            break;
+                        }
+
+                        else if(point1==7||point1==11)
+                        {
+                            window.alert("Player 1 LOSE!!!");
+                            break;
+                        }
+
+                        enter=window.prompt("Player 2\nPress Enter throw the die","\n");
+
+                        face1=Math.floor(1 + Math.random() * 6);
+                        face2=Math.floor(1 + Math.random() * 6);
+                    
+                        var value2=face1+face2;
+                        document.writeln("<p>Player2</p>");
+                        document.writeln("<p>Throw value is "+value2+"</p>");
+
+                        if(value2==point2)
+                        {
+                            window.alert("Player 2 WINS!!!");
+                            break;
+                        }
+
+                        else if(point2==7||point2==11)
+                        {
+                            window.alert("Player 2 LOSE!!!");
+                            break;
+                        }
+
+                    }
+                }
+
+            </script>
+    
+        </head>
+
+        <body>
+        </body>
+</html>
